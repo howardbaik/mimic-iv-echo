@@ -1,0 +1,13 @@
+[project]
+name = "mimic-iv-echo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "howardbaik", email = "howardbaik43@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "physionet>=0.3.0",
+]
+
