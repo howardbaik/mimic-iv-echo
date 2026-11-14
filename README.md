@@ -53,7 +53,7 @@ Create the `logs/` directory before submitting. SLURM won’t create it, and the
 - `--mem=4G` is the memory reserved.
 - `--output=logs/%x-%j.out` is where printed output goes: job name plus job ID. The `logs/` folder has to exist before the job is submitted.
 
----
+<br>
 
 ```{bash}
 set -euo pipefail
@@ -67,7 +67,7 @@ Each flag:
 - `u` treats an undefined variable as an error. A typo like `$PHYSIONET_TOKNE$` would otherwise quietly become an empty string. That’s also why the token check in the script is written `${PHYSIONET_TOKEN:-}`: the :- supplies an empty default, so the check itself doesn’t trip -u when the variable is unset.
 - `o` pipefail makes a pipeline fail if any command in it fails. Normally a pipeline’s exit status comes only from its last command, so in `physionet download ... | tee log.txt` a failed download would be hidden because tee succeeded.
 
----
+<br>
 
 ```{bash}
 if [[ -z "${PHYSIONET_TOKEN:-}" ]]; then
@@ -78,7 +78,7 @@ fi
 
 Safety check: if the token is missing, the job stops right away with a clear message, instead of starting the download and failing partway through with a confusing authentication error.
 
----
+<br>
 
 ```{bash}
 physionet download mimic-iv-echo --version 1.0.1 \
