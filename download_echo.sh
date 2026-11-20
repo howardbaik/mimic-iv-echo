@@ -2,7 +2,7 @@
 #SBATCH --job-name=mimic-echo-dl
 #SBATCH --partition=scu-cpu
 #SBATCH --time=24:00:00
-#SBATCH --cpus-per-task=2
+#SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
 #SBATCH --output=logs/%x-%j.out
 
