@@ -11,5 +11,5 @@ wheels/
 # Virtual environments
 .venv
 
-# DICOM data
-data/.nfs*
+# .nfs files
+.nfs*
