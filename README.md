@@ -4,12 +4,11 @@ First, export Physionet token in login session and submit from that same shell.
 
 ```{bash}
 read -rs PHYSIONET_TOKEN && export PHYSIONET_TOKEN   # paste the token, press Enter; nothing echoes
-sbatch download_echo.sh
 ```
 
 `read -rs` keeps the token out of your shell history.
 
-Then, create bash script:
+Then, create bash script (`download_echo.sh`):
 
 ```{bash}
 #!/bin/bash
@@ -32,6 +31,13 @@ physionet download mimic-iv-echo --version 1.0.1 \
 ```
 
 Create the `logs/` directory before submitting. SLURM won’t create it, and the job will fail without it.
+
+Submit
+
+```{bash}
+sbatch download_echo.sh
+```
+
 
 ## Each bash command
 
