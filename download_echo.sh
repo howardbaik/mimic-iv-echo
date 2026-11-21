@@ -1,9 +1,11 @@
 #!/bin/bash
-#SBATCH --job-name=mimic-echo-dl
-#SBATCH --partition=scu-cpu
-#SBATCH --time=24:00:00
+#SBATCH --job-name=mimic-echo
+#SBATCH --partition=preempt_cpu
+#SBATCH --qos=low
+#SBATCH --time=00:15:00
+#SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=4G
+#SBATCH --mem=2G
 #SBATCH --output=logs/%x-%j.out
 
 set -euo pipefail
@@ -13,5 +15,6 @@ if [[ -z "${PHYSIONET_TOKEN:-}" ]]; then
   exit 1
 fi
 
-physionet download mimic-iv-echo --version 1.0.1 \
-  --output /path/to/lab/storage/mimic-iv-echo
+/home/hob4005/.local/bin/physionet download mimic-iv-echo --version 1.0.1 \
+  --include echo-record-list.csv \
+  --output /athena/holstelab/scratch/hob4005

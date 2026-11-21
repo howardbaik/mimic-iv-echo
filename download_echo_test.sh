@@ -17,4 +17,4 @@ fi
 
 /home/hob4005/.local/bin/physionet download mimic-iv-echo --version 1.0.1 \
   --include "files/p10/p10690270/s95240362/95240362_0004.dcm" \
-  --output /athena/holstelab/scratch/hob4005/mimic-iv-echo 
+  --output /athena/holstelab/scratch/grh4006

@@ -16,3 +16,6 @@ wheels/
 
 # DICOM data
 data/
+
+# Logs
+logs/
