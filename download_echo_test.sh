@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name=mimic-echo-test
+#SBATCH --job-name=mimic-echo-p10
 #SBATCH --partition=preempt_cpu
 #SBATCH --qos=low
-#SBATCH --time=00:15:00
+#SBATCH --time=08:00:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=2G
@@ -16,5 +16,5 @@ if [[ -z "${PHYSIONET_TOKEN:-}" ]]; then
 fi
 
 /home/hob4005/.local/bin/physionet download mimic-iv-echo --version 1.0.1 \
-  --include "files/p10/p10690270/s95240362/95240362_0004.dcm" \
-  --output /athena/holstelab/scratch/grh4006
+  --include "files/p10/*" \
+  --output /athena/holstelab/scratch/hob4005
