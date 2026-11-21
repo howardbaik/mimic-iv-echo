@@ -1,6 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=mimic-echo-test
 #SBATCH --partition=preempt_cpu
+#SBATCH --qos=low
 #SBATCH --time=00:15:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
