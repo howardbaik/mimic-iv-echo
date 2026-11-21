@@ -16,4 +16,5 @@ if [[ -z "${PHYSIONET_TOKEN:-}" ]]; then
 fi
 
 physionet download mimic-iv-echo --version 1.0.1 \
-  --output /path/to/lab/storage/mimic-iv-echo
+  --include "files/p10/p10690270/s95240362/95240362_0004.dcm" \
+  --output /athena/holstelab/scratch/grh4006/mimic-iv-echo 
